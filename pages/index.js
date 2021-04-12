@@ -31,7 +31,7 @@ const Home = () => {
                 </div>
                 <div className={styles.title}>
                   <h1>Dog Destinations</h1>
-                  <h4>
+                  <h4 className={styles.subtitle}>
                     Share, find, like and review great locations for you and
                     your dog
                   </h4>

@@ -77,17 +77,6 @@
   width: 20vh;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: none;
-}
-
 .title {
   margin: 0;
   line-height: 1.15;
@@ -97,6 +86,11 @@
 .title,
 .description {
   text-align: center;
+}
+
+.subtitle {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .description {
