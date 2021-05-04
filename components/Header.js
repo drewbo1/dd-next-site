@@ -6,7 +6,12 @@ const Header = () => {
   return (
     <nav>
       <div className='logo'>
-        <Image src='/logo2black.png' alt='logo' width={100} height={100} />
+        <Image
+          src='https://res.cloudinary.com/dujftalas/image/upload/v1619639711/logo2black_kn3nkw.png'
+          alt='logo'
+          width={100}
+          height={100}
+        />
       </div>
       <Link href='/'>
         <a>Home</a>
