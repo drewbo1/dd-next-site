@@ -16,6 +16,9 @@ const Header = () => {
       <Link href='/'>
         <a>Home</a>
       </Link>
+      <Link href='/Privacy'>
+        <a>Privacy</a>
+      </Link>
     </nav>
   );
 };

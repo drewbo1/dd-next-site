@@ -3537,6 +3537,11 @@ join-path@^1.1.1:
     url-join "0.0.1"
     valid-url "^1"
 
+jquery@1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-1.9.1.tgz#e4cd4835faaefbade535857613c0fc3ff2adaf34"
+  integrity sha1-5M1INfqu+63lNYV2E8D8P/KtrzQ=
+
 js-base64@^2.1.8:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.6.4.tgz#f4e686c5de1ea1f867dbcad3d46d969428df98c4"
@@ -5149,7 +5154,7 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-mobile-store-button@^0.0.6:
+react-mobile-store-button@0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/react-mobile-store-button/-/react-mobile-store-button-0.0.6.tgz#81ff197285169e132f000bb35e92b2f25440bc8b"
   integrity sha512-TJuQXXcyVpf4XPvql0X2yqSrnsM4KBkwRNzn74hbe+ykfAS31dNZa9DxUjU9aey+X+MXs/q3ewRw2O5XSJgwHg==
