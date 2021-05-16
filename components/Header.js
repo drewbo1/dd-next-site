@@ -13,11 +13,11 @@ const Header = () => {
           height={100}
         />
       </div>
-      <Link href='/'>
-        <a>Home</a>
+      <Link href='/' activeClassName='active'>
+        <a style={{ textDecoration: 'none' }}>Home</a>
       </Link>
-      <Link href='/privacy'>
-        <a>Privacy</a>
+      <Link href='/privacy' activeClassName='active'>
+        <a style={{ textDecoration: 'none' }}>Privacy</a>
       </Link>
     </nav>
   );

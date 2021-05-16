@@ -3,21 +3,26 @@
 
 a {
   color: #333;
-  
-  font-size: 1.5rem;
-  padding-bottom: 25px;
+  font-size: 1.2rem;
+  padding-bottom: 2.5rem;
 }
+
+
 
 nav {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
   background-color: #76b4bd;
-  text-decoration: none;
 }
 nav a {
   margin-right: 50px;
 }
+
+nav a .active {
+  color: red;
+}
+
 nav .logo {
   margin-right: auto;
   margin-left: 20px;
