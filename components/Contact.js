@@ -14,6 +14,7 @@ const Contact = () => {
       [e.target.name]: e.target.value,
     });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     sendEmail();
@@ -69,7 +70,7 @@ const Contact = () => {
                 rows={3}
               />
             </Form.Group>
-            <Button variant='primary' type='submit'>
+            <Button variant='dark' type='submit'>
               Submit
             </Button>
           </Form>
