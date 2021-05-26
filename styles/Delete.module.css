@@ -1,0 +1,21 @@
+.section {
+    min-height: 80vh;
+}
+
+.heading h1 {
+    font-size: 3.5rem;
+    padding: 2rem 0;
+}
+
+.subHeading h3 {
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+
+.mainSection p {
+    font-size: 1.2rem;
+}
+
+.mainSection ul {
+   list-style-type: none;
+}

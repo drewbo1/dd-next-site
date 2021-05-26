@@ -14,14 +14,10 @@ const Header = () => {
         />
       </div>
       <Link href='/'>
-        <a style={{ textDecoration: 'none' }} activeClassName='active'>
-          Home
-        </a>
+        <a style={{ textDecoration: 'none' }}>Home</a>
       </Link>
       <Link href='/privacy'>
-        <a style={{ textDecoration: 'none' }} activeClassName='active'>
-          Privacy
-        </a>
+        <a style={{ textDecoration: 'none' }}>Privacy</a>
       </Link>
     </nav>
   );
