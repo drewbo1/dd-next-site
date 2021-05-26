@@ -78,10 +78,13 @@ const DeleteForm = () => {
                 value={'Please delete all data associated with me'}
               />
             </Form.Group>
-            <ReCAPTCHA
-              sitekey='6LdRBO8aAAAAAIhWvIeNGoCu-SF6-ThFFrHkDr9t'
-              onChange={onChange}
-            />
+            <div style={{ marginTop: 25, marginBottom: 25 }}>
+              <ReCAPTCHA
+                sitekey='6LdRBO8aAAAAAIhWvIeNGoCu-SF6-ThFFrHkDr9t'
+                onChange={onChange}
+              />
+            </div>
+
             <Button variant='dark' type='submit'>
               Submit
             </Button>
