@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import MobileStoreButton from 'react-mobile-store-button';
 import Contact from '../components/Contact';
-import * as firebase from 'firebase';
+import firebase from 'firebase';
 
 const Home = () => {
   const iOSUrl =
