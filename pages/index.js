@@ -23,7 +23,7 @@ const Home = () => {
               <div className={styles.mainContent}>
                 <div className={styles.mainLogo}>
                   <Image
-                    src='https://res.cloudinary.com/dujftalas/image/upload/v1622472450/logo2black_kn3nkw.png'
+                    src='v1622472450/logo2black_kn3nkw.png'
                     alt='logo'
                     width={200}
                     height={200}

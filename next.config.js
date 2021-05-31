@@ -1,6 +1,7 @@
 module.exports = {
   images: {
-    domains: ['res.cloudinary.com'],
+    loader: 'cloudinary',
+    path: 'https://res.cloudinary.com/dujftalas/image/upload/',
   },
   target: 'serverless',
 };
