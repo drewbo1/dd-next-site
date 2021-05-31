@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import MobileStoreButton from 'react-mobile-store-button';
 import Contact from '../components/Contact';
+import * as firebase from 'firebase';
 
 const Home = () => {
   const iOSUrl =
@@ -14,6 +15,16 @@ const Home = () => {
 
   const androidUrl =
     'https://play.google.com/store/apps/details?id=com.andrewmarshall.dogdestinations';
+
+  const totalUsers = () => {
+    firebase
+      .database()
+      .ref('/users/user_count')
+      .once('value', (snapshot) => {
+        const val = snapshot.val();
+        return `We have ${val} users registered to use the app.`;
+      });
+  };
   return (
     <Container fluid>
       <Row>
@@ -134,7 +145,7 @@ const Home = () => {
               <Col lg={4}>
                 <Card className={styles.card}>
                   <h3>Users</h3>
-                  <p>We have 100+ users registered to use the app.</p>
+                  <p>{totalUsers}</p>
                 </Card>
               </Col>
               <Col lg={4}>
