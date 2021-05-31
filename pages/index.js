@@ -23,7 +23,7 @@ const Home = () => {
               <div className={styles.mainContent}>
                 <div className={styles.mainLogo}>
                   <Image
-                    src='http://res.cloudinary.com/dujftalas/image/upload/v1622472450/logo2black_ckhwkq.png'
+                    src='https://res.cloudinary.com/dujftalas/image/upload/v1622472450/logo2black_kn3nkw.png'
                     alt='logo'
                     width={200}
                     height={200}
@@ -73,7 +73,7 @@ const Home = () => {
                   </div>
                   <Col>
                     <Image
-                      src='http://res.cloudinary.com/dujftalas/image/upload/v1620160683/mapPage_vo2n1a.png'
+                      src='https://res.cloudinary.com/dujftalas/image/upload/v1620160683/mapPage_vo2n1a.png'
                       alt='app screen'
                       width={250}
                       height={500}
@@ -92,7 +92,7 @@ const Home = () => {
                   </p>
 
                   <Image
-                    src='http://res.cloudinary.com/dujftalas/image/upload/v1620160620/addPage_lehvm1.png'
+                    src='https://res.cloudinary.com/dujftalas/image/upload/v1620160620/addPage_lehvm1.png'
                     alt='app screen'
                     width={250}
                     height={500}
@@ -109,7 +109,7 @@ const Home = () => {
                   </p>
 
                   <Image
-                    src='http://res.cloudinary.com/dujftalas/image/upload/v1620160699/reviewPage_fb83up.png'
+                    src='https://res.cloudinary.com/dujftalas/image/upload/v1620160699/reviewPage_fb83up.png'
                     alt='app screen'
                     width={250}
                     height={500}

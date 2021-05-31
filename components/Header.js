@@ -7,7 +7,7 @@ const Header = () => {
     <nav>
       <div className='logo'>
         <Image
-          src='http://res.cloudinary.com/dujftalas/image/upload/v1622472450/logo2black_ckhwkq.png'
+          src='https://res.cloudinary.com/dujftalas/image/upload/v1622472450/logo2black_kn3nkw.png'
           alt='logo'
           width={100}
           height={100}
