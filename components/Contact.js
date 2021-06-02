@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from 'react';
-import { Axios } from '../src/firebase/firebaseConfig';
+import { Axios } from 'axios';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';

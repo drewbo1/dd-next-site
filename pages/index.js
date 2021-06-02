@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 import Image from 'next/image';
 import Col from 'react-bootstrap/Col';
@@ -7,24 +7,49 @@ import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import MobileStoreButton from 'react-mobile-store-button';
 import Contact from '../components/Contact';
-import firebase from 'firebase';
+import fire from '../src/firebase/firebaseConfig';
+import { snapshotToArray } from '../src/firebase/extras';
 
 const Home = () => {
+  useEffect(() => {
+    getTotalUsers();
+    getLocations();
+  }, []);
+  const [totalUsers, setTotalUsers] = useState('');
+  const [locations, setLocations] = useState({});
   const iOSUrl =
     'https://apps.apple.com/ie/app/dog-destinations/id1534439374#?platform=iphone';
 
   const androidUrl =
     'https://play.google.com/store/apps/details?id=com.andrewmarshall.dogdestinations';
 
-  const totalUsers = () => {
-    firebase
+  const getTotalUsers = () => {
+    fire
       .database()
       .ref('/users/user_count')
       .once('value', (snapshot) => {
         const val = snapshot.val();
-        return `We have ${val} users registered to use the app.`;
+        setTotalUsers(val);
+        console.log(val);
       });
   };
+
+  const getLocations = () => {
+    fire
+      .database()
+      .ref('/locations')
+      .once('value', (snapshot) => {
+        const val = snapshotToArray(snapshot);
+        setLocations(val);
+      });
+  };
+
+  const totalLocations = Object.keys(locations).length;
+
+  const totalUsersScript = `We currently have ${totalUsers} users registered.`;
+
+  const totalLocationsScript = `We have ${totalLocations} locations currently added by users.`;
+
   return (
     <Container fluid>
       <Row>
@@ -145,13 +170,13 @@ const Home = () => {
               <Col lg={4}>
                 <Card className={styles.card}>
                   <h3>Users</h3>
-                  <p>{totalUsers}</p>
+                  <p>{totalUsersScript}</p>
                 </Card>
               </Col>
               <Col lg={4}>
                 <Card className={styles.card}>
                   <h3>Locations</h3>
-                  <p>We have 20 locations currently added by users.</p>
+                  <p>{totalLocationsScript}</p>
                 </Card>
               </Col>
             </Row>
