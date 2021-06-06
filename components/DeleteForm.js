@@ -102,7 +102,7 @@ const DeleteForm = () => {
             <Form.Group controlId='formMessage'>
               <Form.Label>Message</Form.Label>
               <Form.Control
-                type='text'
+                as='textarea'
                 readOnly
                 name='message'
                 value={'Please delete all data associated with me'}
