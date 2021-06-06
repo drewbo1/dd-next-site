@@ -1,12 +1,16 @@
 import React, { useState, Fragment } from 'react';
-import { Axios } from 'axios';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Form } from 'react-bootstrap';
+import ReCAPTCHA from 'react-google-recaptcha';
+import Spinner from 'react-bootstrap/Spinner';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({});
+  const [captcha, setCaptcha] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const updateInput = (e) => {
     setFormData({
@@ -15,9 +19,53 @@ const Contact = () => {
     });
   };
 
+  const handleIsLoadingToggle = () => {
+    setIsLoading((isLoading) => !isLoading);
+  };
+
+  const onChange = () => {
+    setCaptcha((captcha) => !captcha);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    sendEmail();
+    if (captcha) {
+      const { name, email, message } = formData;
+      handleIsLoadingToggle();
+      let templateParams = {
+        from_name: name,
+        from_email: email,
+        to_name: 'Andy',
+        message: message,
+      };
+      emailjs
+        .send(
+          'service_ut6qeda',
+          'template_cnqe7de',
+          templateParams,
+          'user_k5sE5uKKb01pdUWenR2Kw'
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            if (result.text === 'OK') {
+              alert('Your mail is sent!');
+              handleIsLoadingToggle();
+            }
+          },
+          (error) => {
+            console.log(error.text);
+            alert('There was a problem, your mail could not be sent.');
+            handleIsLoadingToggle();
+          }
+        );
+      clearForm();
+    } else {
+      alert('Please confirm your non-robot status');
+    }
+  };
+
+  const clearForm = () => {
     setFormData({
       name: '',
       email: '',
@@ -25,14 +73,6 @@ const Contact = () => {
     });
   };
 
-  const sendEmail = () => {
-    Axios.post(
-      'https://us-central1-dog-destinations.cloudfunctions.net/submit',
-      formData
-    ).catch((error) => {
-      console.log(error);
-    });
-  };
   return (
     <Fragment>
       <Container>
@@ -70,9 +110,19 @@ const Contact = () => {
                 rows={3}
               />
             </Form.Group>
-            <Button variant='dark' type='submit'>
-              Submit
-            </Button>
+            <div className='g-recaptcha'>
+              <ReCAPTCHA
+                sitekey='6LdRBO8aAAAAAIhWvIeNGoCu-SF6-ThFFrHkDr9t'
+                onChange={onChange}
+              />
+            </div>
+            {isLoading ? (
+              <Spinner animation='border' variant='dark' />
+            ) : (
+              <Button variant='dark' type='submit'>
+                Submit
+              </Button>
+            )}
           </Form>
         </Card>
       </Container>

@@ -1,20 +1,26 @@
 import React, { useState, Fragment } from 'react';
-import { Axios } from '../src/firebase/firebaseConfig';
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Form } from 'react-bootstrap';
+import Spinner from 'react-bootstrap/Spinner';
 import ReCAPTCHA from 'react-google-recaptcha';
+import emailjs from 'emailjs-com';
 
 const DeleteForm = () => {
   const [formData, setFormData] = useState({});
   const [captcha, setCaptcha] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const updateInput = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleIsLoadingToggle = () => {
+    setIsLoading((isLoading) => !isLoading);
   };
 
   const onChange = () => {
@@ -24,25 +30,49 @@ const DeleteForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (captcha) {
-      sendEmail();
-      setFormData({
-        name: '',
-        email: '',
-        message: 'Please delete all data associated with me ',
-      });
+      const { name, email } = formData;
+      handleIsLoadingToggle();
+      let templateParams = {
+        from_name: name,
+        from_email: email,
+        to_name: 'Andy',
+        message: 'Please delete all data associated with me',
+      };
+      emailjs
+        .send(
+          'service_ut6qeda',
+          'template_cnqe7de',
+          templateParams,
+          'user_k5sE5uKKb01pdUWenR2Kw'
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            if (result.text === 'OK') {
+              alert('Your mail is sent!');
+              handleIsLoadingToggle();
+            }
+          },
+          (error) => {
+            console.log(error.text);
+            alert('There was a problem, your mail could not be sent.');
+            handleIsLoadingToggle();
+          }
+        );
+      clearForm();
     } else {
       alert('Please confirm your non-robot status');
     }
   };
 
-  const sendEmail = () => {
-    Axios.post(
-      'https://us-central1-dog-destinations.cloudfunctions.net/submit',
-      formData
-    ).catch((error) => {
-      console.log(error);
+  const clearForm = () => {
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
     });
   };
+
   return (
     <Fragment>
       <Container>
@@ -76,18 +106,22 @@ const DeleteForm = () => {
                 readOnly
                 name='message'
                 value={'Please delete all data associated with me'}
+                rows={2}
               />
             </Form.Group>
-            <div style={{ marginTop: 25, marginBottom: 25 }}>
+            <div className='g-recaptcha'>
               <ReCAPTCHA
                 sitekey='6LdRBO8aAAAAAIhWvIeNGoCu-SF6-ThFFrHkDr9t'
                 onChange={onChange}
               />
             </div>
-
-            <Button variant='dark' type='submit'>
-              Submit
-            </Button>
+            {isLoading ? (
+              <Spinner animation='border' variant='dark' />
+            ) : (
+              <Button variant='dark' type='submit'>
+                Submit
+              </Button>
+            )}
           </Form>
         </Card>
       </Container>

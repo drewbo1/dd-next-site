@@ -64,3 +64,11 @@ section {
   margin-left: .75rem;
 }
 
+.g-recaptcha {
+  margin-top: 5; 
+  margin-bottom: 25;
+  transform:scale(0.82);
+  transform-origin:0 0;
+  
+}
+
