@@ -40,10 +40,10 @@ const Contact = () => {
       };
       emailjs
         .send(
-          'service_ut6qeda',
-          'template_cnqe7de',
+          process.env.REACT_APP_EMAIL_SERVICE_ID,
+          process.env.REACT_APP_CONTACT_EMAIL_TEMPLATE_ID,
           templateParams,
-          'user_k5sE5uKKb01pdUWenR2Kw'
+          process.env.REACT_APP_EMAIL_USER_ID
         )
         .then(
           (result) => {
