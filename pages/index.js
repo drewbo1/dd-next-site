@@ -85,18 +85,22 @@ const Home = () => {
                     </h4>
                   </div>
                   <div className={styles.buttonBoxArea}>
-                    <MobileStoreButton
-                      store='ios'
-                      url={iOSUrl}
-                      width={130}
-                      height={50}
-                    />
-                    <MobileStoreButton
-                      store='android'
-                      url={androidUrl}
-                      width={130}
-                      height={50}
-                    />
+                    <div className={styles.storeButtonApple}>
+                      <MobileStoreButton
+                        store='ios'
+                        url={iOSUrl}
+                        width={250}
+                        height={100}
+                      />
+                    </div>
+                    <div className={styles.storeButton}>
+                      <MobileStoreButton
+                        store='android'
+                        url={androidUrl}
+                        width={250}
+                        height={100}
+                      />
+                    </div>
                   </div>
                 </div>
               </Col>
