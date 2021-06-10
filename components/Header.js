@@ -2,8 +2,11 @@ import React, { Fragment } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Header = () => {
+  const router = useRouter();
+
   return (
     <Fragment>
       <Head>
@@ -37,10 +40,12 @@ const Header = () => {
           />
         </div>
         <Link href='/'>
-          <a style={{ textDecoration: 'none' }}>Home</a>
-        </Link>
-        <Link href='/privacy'>
-          <a style={{ textDecoration: 'none' }}>Privacy</a>
+          <a
+            className={router.pathname == '/' ? 'active' : ''}
+            style={{ textDecoration: 'none' }}
+          >
+            Home
+          </a>
         </Link>
       </nav>
     </Fragment>
