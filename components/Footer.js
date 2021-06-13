@@ -11,7 +11,7 @@ const Footer = () => {
     <div className='footer'>
       <Row>
         <Col lg={4} md={4} sm={12} className='social-icon-box'>
-          <h4></h4>
+          <p></p>
         </Col>
         <Col lg={4} md={4} sm={12} className='copyright-block'>
           <p>Copyright 2021 Dog Destinations</p>
