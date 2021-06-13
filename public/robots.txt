@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.dogdestinations.co.uk/
+
+# Sitemaps
+Sitemap: https://www.dogdestinations.co.uk/sitemap.xml
