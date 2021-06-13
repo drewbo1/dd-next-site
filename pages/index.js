@@ -79,10 +79,10 @@ const Home = () => {
                   </div>
                   <div className={styles.title}>
                     <h1>Dog Destinations</h1>
-                    <h4 className={styles.subtitle}>
+                    <h2 className={styles.subtitle}>
                       Share, find, like and review great locations for you and
                       your dog
-                    </h4>
+                    </h2>
                   </div>
                   <div className={styles.buttonBoxArea}>
                     <div className={styles.storeButtonApple}>
@@ -91,6 +91,7 @@ const Home = () => {
                         url={iOSUrl}
                         width={250}
                         height={100}
+                        alt='Apple Store button'
                       />
                     </div>
                     <div className={styles.storeButton}>
@@ -99,6 +100,7 @@ const Home = () => {
                         url={androidUrl}
                         width={250}
                         height={100}
+                        alt='Android store button'
                       />
                     </div>
                   </div>

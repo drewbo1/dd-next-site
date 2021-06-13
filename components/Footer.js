@@ -11,7 +11,7 @@ const Footer = () => {
     <div className='footer'>
       <Row>
         <Col lg={4} md={4} sm={12} className='social-icon-box'>
-          <h4>Social icons</h4>
+          <h4></h4>
         </Col>
         <Col lg={4} md={4} sm={12} className='copyright-block'>
           <p>Copyright 2021 Dog Destinations</p>
@@ -25,7 +25,7 @@ const Footer = () => {
                   className={router.pathname == '/privacy' ? 'active' : ''}
                   style={{ textDecoration: 'none' }}
                 >
-                  Privacy
+                  Privacy Policy
                 </a>
               </Link>
             </li>
@@ -35,7 +35,7 @@ const Footer = () => {
                   className={router.pathname == '/delete' ? 'active' : ''}
                   style={{ textDecoration: 'none' }}
                 >
-                  Delete
+                  Delete all information
                 </a>
               </Link>
             </li>

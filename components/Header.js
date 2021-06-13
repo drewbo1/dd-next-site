@@ -10,6 +10,38 @@ const Header = () => {
   return (
     <Fragment>
       <Head>
+        <meta
+          httpEquiv='Content-Type'
+          content='text/html;
+        charset=utf-8'
+        />
+        <meta
+          name='viewport'
+          content='width=device-width,
+        initial-scale=1'
+        />
+        <meta
+          name='description'
+          content='Dog Destinations is an app that lets you share, find, like and review great locations for you and
+                      your dog'
+        />
+        <title>
+          Dog Destinations | Share, find, like and review great locations for
+          you and your dog
+        </title>
+        <meta property='og:title' content='Dog Destinations' />
+        <meta property='og:type' content='website' />
+        <meta property='og:url' content='https://www.dogdestinations.co.uk' />
+        <meta
+          property='og:image'
+          content='https://res.cloudinary.com/dujftalas/image/upload/v1619904067/mainLogo_q77klp.png'
+        />
+        <meta
+          property='og:description'
+          content='Dog Destinations is an app that lets you share, find, like and review great locations for you and
+                      your dog'
+        />
+
         <link
           rel='apple-touch-icon'
           sizes='180x180'
