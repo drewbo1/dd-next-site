@@ -24,7 +24,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    init(process.env.REACT_APP_EMAIL_USER_ID);
+    init('user_k5sE5uKKb01pdUWenR2Kw');
   });
 
   const iOSUrl =

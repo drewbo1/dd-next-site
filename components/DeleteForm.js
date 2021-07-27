@@ -43,7 +43,7 @@ const DeleteForm = () => {
           process.env.REACT_APP_EMAIL.SERVICE_ID,
           process.env.REACT_APP_DELETE_EMAIL_TEMPLATE_ID,
           templateParams,
-          process.env.REACT_APP_EMAIL_USER_ID
+          'user_k5sE5uKKb01pdUWenR2Kw'
         )
         .then(
           (result) => {

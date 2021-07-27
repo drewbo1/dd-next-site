@@ -43,7 +43,7 @@ const Contact = () => {
           process.env.REACT_APP_EMAIL_SERVICE_ID,
           process.env.REACT_APP_CONTACT_EMAIL_TEMPLATE_ID,
           templateParams,
-          process.env.REACT_APP_EMAIL_USER_ID
+          'user_k5sE5uKKb01pdUWenR2Kw'
         )
         .then(
           (result) => {
