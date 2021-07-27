@@ -7,7 +7,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../public/david-gabric-ybMZZuCh7m4-unsplash.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/dujftalas/image/upload/v1627417477/mananddog_bqnro5.jpg");
+  background-size: cover;
+  background-position-y: center;
 }
 
 .mainB {

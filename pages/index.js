@@ -71,7 +71,7 @@ const Home = () => {
                 <div className={styles.mainContent}>
                   <div className={styles.mainLogo}>
                     <Image
-                      src='v1622472450/logo2black_kn3nkw.png'
+                      src='v1627417378/logo2white_b320ud.png'
                       alt='logo'
                       width={200}
                       height={200}
