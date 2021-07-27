@@ -7,9 +7,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/dujftalas/image/upload/v1627417477/mananddog_bqnro5.jpg");
   background-size: cover;
-  background-position-y: center;
+  background-position: center;
 }
 
 .mainB {
@@ -36,6 +35,7 @@
 .mainContent {
   flex:1;
   display: flex;
+  color:darkgray;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -59,7 +59,7 @@
 .buttonBoxArea {
   flex:1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: stretch;
   padding-top: 2rem;
@@ -154,3 +154,23 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 550px) {
+  .mainA {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/dujftalas/image/upload/v1627417468/highshotofwalk_d5azik.jpg");
+  }
+}
+
+@media (max-width: 800px) {
+  .mainA {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/dujftalas/image/upload/v1627417459/dogonlead_ckad7h.jpg");
+  }
+}
+
+@media (min-width: 800px) {
+  .mainA {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://res.cloudinary.com/dujftalas/image/upload/v1627417477/mananddog_bqnro5.jpg");
+  }
+}
+
+
